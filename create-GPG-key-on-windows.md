@@ -109,7 +109,7 @@ uid                      example (my-key) <example@gmail.com>
 sub   cv25519 2024-07-10 [E]
 ```
 
-* to check you keys thpe this command 
+* to check you keys type this command 
 ```bash
 gpg --list-secret-keys --keyid-format=long
 ```

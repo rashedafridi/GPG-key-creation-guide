@@ -83,16 +83,35 @@ git commit -S -m "YOUR_COMMIT_MESSAGE"
 ```bash
 git config --global commit.gpgsign true
 ```
+- if you want  all tag to be signed by default set `tag.gpgsign`  value as true.
 ```bash
 git config --global tag.gpgsign true
 ```
-```bash
-git config --global gpg.program "path"
-```
+
+- ⚠️ If your are on windows you must add `gpg.program` to point to `gpg` executable or you will see error like bellow ⚠️
+
+    ```bash
+    gpg: skipped "5EFF2D55A8A07709": No secret key
+    gpg: signing failed: No secret key
+    error: gpg failed to sign the data
+    fatal: failed to write commit object
+    ```
+    - to slove it set  `gpg` executable in config. 
+    ```bash
+    # find executable path
+    # on windows open powerShall use bellow command
+    (Get-Command gpg).Path
+    # output: C:\Program Files (x86)\Gpg4win\..\GnuPG\bin\gpg.exe
+
+    # now addd the path to git config
+    git config --global gpg.program "C:\Program Files (x86)\Gpg4win\..\GnuPG\bin\gpg.exe"
+    ```
+
+- you can use this command to list all config for verification purpose.
+
 ```bash
 git config --global --list
 ```
-
 
 <p align="center">
  ----- end -----

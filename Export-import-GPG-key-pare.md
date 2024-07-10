@@ -13,6 +13,8 @@ gpg --armor --export-ownertrust > gpg-ownertrust.asc
 
 ### Import Command
 
+- copy those 3 fime to the Device you want to use it on and run the below command.
+
 ```bash
 gpg --armor  --import  public-gpg.asc
 gpg --armor  --import  privat-gpg.asc
